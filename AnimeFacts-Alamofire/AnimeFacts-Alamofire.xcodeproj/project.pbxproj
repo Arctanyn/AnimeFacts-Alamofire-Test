@@ -84,7 +84,7 @@
 				3B4C394B279699FB00758A98 /* AppFiles */,
 				3B4C394C27969A0400758A98 /* ViewControllers */,
 				3B4C394D27969A1100758A98 /* Models */,
-				3B7C16432796E0640006952D /* NetworkMonitor.swift */,
+				3B7C164E2797DBC50006952D /* NetworkServices */,
 				3B4C394A279699F300758A98 /* Storyboards */,
 				3B7C16452796E60A0006952D /* SupportingFiles */,
 			);
@@ -135,6 +135,14 @@
 				3B4C3944279699E900758A98 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3B7C164E2797DBC50006952D /* NetworkServices */ = {
+			isa = PBXGroup;
+			children = (
+				3B7C16432796E0640006952D /* NetworkMonitor.swift */,
+			);
+			path = NetworkServices;
 			sourceTree = "<group>";
 		};
 		AD9394A05307777A7379D740 /* Pods */ = {

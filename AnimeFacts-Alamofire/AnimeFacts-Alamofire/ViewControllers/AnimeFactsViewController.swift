@@ -112,11 +112,13 @@ extension AnimeFactsViewController {
         animeFactsTableView.allowsSelection = false
         animeFactsTableView.dataSource = self
         animeFactsTableView.delegate = self
+        animeFactsTableView.alpha = 0.95
     }
     
     private func checkConnection() {
         if !NetworkMonitor.shared.isConnected {
-            showAlert(with: "Something wrong with your internet connection", and: "Please connect to the network or try again later")
+            showAlert(with: "Something wrong with your internet connection",
+                      and: "Please connect to the network or try again later")
         }
     }
     

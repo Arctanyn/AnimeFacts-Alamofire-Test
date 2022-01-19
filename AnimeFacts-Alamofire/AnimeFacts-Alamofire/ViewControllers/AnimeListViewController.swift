@@ -16,26 +16,24 @@ class AnimeListViewController: UICollectionViewController {
     
     //MARK: - Properties
     private var animeList = [AnimeExample]()
-    
+    private let itemPerRow = CGFloat(3)
     
     //MARK: - View
     @IBOutlet weak var reloadDataButton: UIButton!
     @IBOutlet weak var dataLoadingIndicatorView: UIActivityIndicatorView!
-    
     
     //MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = .zero
-        self.title = "Anime List"
+        self.title = "Anime Library"
         
         dataLoadingIndicatorView.hidesWhenStopped = true
         
         checkConnection()
         loadAnimeData()
     }
-    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,6 +72,7 @@ class AnimeListViewController: UICollectionViewController {
         }
     }
     
+    //MARK: - IBActions
     @IBAction func reloadDataTapped(_ sender: UIButton) {
         reloadDataButton.isHidden = true
         loadAnimeData()
@@ -82,9 +81,6 @@ class AnimeListViewController: UICollectionViewController {
 
 // MARK: - UICollectionViewDataSource
 extension AnimeListViewController {
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return animeList.count
     }
@@ -104,7 +100,6 @@ extension AnimeListViewController {
 //MARK: - UICollectionViewDelegateFlowLayout
 extension AnimeListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemPerRow = CGFloat(2)
         let paddingWidth = 5 * (itemPerRow + 1)
         let avaibleWidth = collectionView.frame.width - paddingWidth
         let widthPerItem = avaibleWidth / itemPerRow
@@ -116,7 +111,8 @@ extension AnimeListViewController: UICollectionViewDelegateFlowLayout {
 extension AnimeListViewController {
     private func checkConnection() {
         if !NetworkMonitor.shared.isConnected {
-            showAlert(with: "Something wrong with your internet connection", and: "Please connect to the network or try again later")
+            showAlert(with: "Something wrong with your internet connection",
+                      and: "Please connect to the network or try again later")
         } else {
             reloadDataButton.isHidden = true
         }

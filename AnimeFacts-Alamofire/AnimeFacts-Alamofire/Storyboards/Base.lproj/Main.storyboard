@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Anime List View Controller-->
+        <!--Anime Library-->
         <scene sceneID="5rs-gu-CJW">
             <objects>
                 <collectionViewController id="91b-Km-Lck" customClass="AnimeListViewController" customModule="AnimeFacts_Alamofire" customModuleProvider="target" sceneMemberID="viewController">
@@ -58,26 +58,26 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0TV-EB-D8K">
-                                            <rect key="frame" x="8" y="8" width="191" height="219"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="207" height="234"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8m-kt-Ptw">
-                                            <rect key="frame" x="8" y="232" width="191" height="32"/>
+                                            <rect key="frame" x="8" y="239" width="191" height="25"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="IsW-Ra-NG6"/>
+                                                <constraint firstAttribute="height" constant="25" id="IsW-Ra-NG6"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="0TV-EB-D8K" secondAttribute="trailing" id="0jB-dy-v4c"/>
+                                        <constraint firstItem="0TV-EB-D8K" firstAttribute="leading" secondItem="NSj-uY-sb5" secondAttribute="leading" id="1ZR-c5-hOB"/>
                                         <constraint firstItem="h8m-kt-Ptw" firstAttribute="leading" secondItem="NSj-uY-sb5" secondAttribute="leadingMargin" id="Edb-eV-keQ"/>
-                                        <constraint firstItem="0TV-EB-D8K" firstAttribute="leading" secondItem="NSj-uY-sb5" secondAttribute="leadingMargin" id="Gye-EX-3k0"/>
+                                        <constraint firstAttribute="trailing" secondItem="0TV-EB-D8K" secondAttribute="trailing" id="Sjj-8C-eJ8"/>
+                                        <constraint firstItem="h8m-kt-Ptw" firstAttribute="top" secondItem="0TV-EB-D8K" secondAttribute="bottom" constant="5" id="Y9Y-ia-WxD"/>
                                         <constraint firstItem="h8m-kt-Ptw" firstAttribute="bottom" secondItem="NSj-uY-sb5" secondAttribute="bottomMargin" id="eM7-7t-gSe"/>
+                                        <constraint firstItem="0TV-EB-D8K" firstAttribute="top" secondItem="NSj-uY-sb5" secondAttribute="top" id="fzk-9J-xmb"/>
                                         <constraint firstItem="h8m-kt-Ptw" firstAttribute="trailing" secondItem="NSj-uY-sb5" secondAttribute="trailingMargin" id="g91-D3-CXV"/>
-                                        <constraint firstItem="h8m-kt-Ptw" firstAttribute="top" secondItem="0TV-EB-D8K" secondAttribute="bottom" constant="5" id="hpQ-tF-XFS"/>
-                                        <constraint firstItem="0TV-EB-D8K" firstAttribute="top" secondItem="NSj-uY-sb5" secondAttribute="topMargin" id="ktr-eX-D1w"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="207" height="272"/>
@@ -93,7 +93,9 @@
                             <outlet property="delegate" destination="91b-Km-Lck" id="hVP-fQ-Oq3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="E6n-MC-1tm"/>
+                    <navigationItem key="navigationItem" title="Anime Library" id="E6n-MC-1tm">
+                        <barButtonItem key="backBarButtonItem" title="Library" id="fVf-B4-hdl"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="dataLoadingIndicatorView" destination="l7N-rp-Y4z" id="ghm-N2-yAh"/>
                         <outlet property="reloadDataButton" destination="S4a-iF-QaG" id="ppn-YQ-ecc"/>
@@ -101,7 +103,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wfO-P3-Xo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513.04347826086962" y="27.455357142857142"/>
+            <point key="canvasLocation" x="512.79999999999995" y="27.436281859070466"/>
         </scene>
         <!--Anime Facts View Controller-->
         <scene sceneID="PvF-Gp-wd3">
